@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Ms+Madi&display=swap');
+
+/* Description
+01. Root settings
+02. Body & html settings
+03. Navbar
+04. Hero Section
+05. Cards
+06. Footer
+07. Media queries
+*/
+
+/*------1. Root Settings------*/
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+
+  --one: #3a3432;
+
+  --two: #C6B1A4;
+
+  --three: #D52941;
+
+  --wheat: #dec79e;
+
+  --black: #000000;
+
+  --white: #ffffff;
+}
+
+/*-----2. Body & html settings-----*/
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  top: 0;
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--wheat);
+}
+
+/*-----3. Navbar------*/
+.navbar {
+  position: fixed;
+  background-color: var(--one);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  z-index: 202;
+}
+
+/*Toggle*/
+.toggle-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+/*Bar style*/
+.toggle-button .bar {
+  height: 2px;
+  width: 100%;
+  background-color: var(--wheat);
+  border-radius: 10%;
+}
+
+/*Brand/logo text*/
+.brand-title {
+  font-family: 'Ms Madi', cursive;
+  font-size: 2rem;
+  padding: 2vh 4vw;
+  margin: 0;
+  text-decoration: none;
+}
+
+.brand-title:hover {
+  color: var(--white);
+  transition: 0.4s;
+}
+
+.navbar-links {
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.navbar-links a {
+  color: var(--wheat);
+  text-decoration: none;
+
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-links li {
+  list-style: none;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding-right: 6vw;
+  font-size: 1.2rem;
+}
+
+.navbar-links li a:hover {
+  color: var(--white);
+  transition: 0.4s;
+}
+
+/*---------Main---------*/
+
+/*----4. Hero section----*/
+.hero-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+  url(img/bakery-g31f9c10ba_640.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 8vh;
+  position: relative;
+  height: 50vh;
+}
+
+.hero-content {
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  width: 80%;
+  height: auto;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.hero-content > h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#hero-headline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+/*Hero Button*/
+.hero-btn {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--three);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  transition: all 0.4s;
+  margin: 0.5rem;
+}
+
+.hero-btn:link, .hero-btn:visited {
+  background-color: var(--three);
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-btn:hover, .hero-btn:active {
+  background-color: var(--white);
+  color: var(--black);
+  transition: 0.4s;
+}
+
+/*------5. Cards------*/
+
+#cards-title {
+  font-weight: 600;
+  text-align: center;
+  padding-top: 2vh;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  padding-right: 15vw;
+  padding-left: 15vw;
+  gap: 2rem 0;
+
+  grid-template-areas:
+  "card1"
+  "card2"
+  "card3";
+}
+
+#card1, #card3, #card2 {
+  color: var(--black);
+  background-color: var(--wheat);
+}
+
+.cake, .bread, .dessert {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 30vh;
+  width: 100%;
+}
+
+.cake {
+  background-image: url(img/cake-g6cf300c00_640.jpg);
+}
+
+.bread {
+  background-image: url(img/bread-gc86d2e7c4_640.jpg);
+}
+
+.dessert {
+  background-image: url(img/cake-ga18d67f03_640.jpg);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  margin: 1rem;
+}
+
+.card-content h3 {
+  font-weight: 500;
+}
+
+
+.card-content a:link,
+.card-content a:visited {
+  background-color: var(--wheat);
+  color: var(--black);
+  border: 1px solid var(--black);
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.card-content a:hover,
+.card-content a:active {
+  background-color: var(--black);
+  color: white;
+  transition: 0.2s;
+}
+
+.before-footer-image {
+  background-image: url(img/bread-g54eac44c0_640.jpg);
+  opacity: 0.65;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  height: 24vh;
+  margin-top: 3rem;
+}
+
+/*--------6. Footer---------*/
+
+.footer-container {
+  display: grid;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  z-index: 201;
+  background-color: var(--one);
+  color: var(--wheat);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "footer1 footer1"
+    "footer2 footer2"
+    "footer-bottom footer-bottom";
+}
+
+.footer-container h3 {
+  font-size: 1.4rem;
+}
+
+
+#footer1, #footer2 {
+  height: auto;
+  margin: 1rem 2rem;
+  text-align: center;
+}
+
+#footer1 {
+  grid-area: footer1;
+}
+
+#footer2 {
+  grid-area: footer2;
+}
+
+#footer-bottom {
+  grid-area: footer-bottom;
+  color: var(--two);
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  margin: auto;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.opening-hours-days {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-text {
+  color: var(--white);
+}
+
+/*------7. Media queries------*/
+
+/*Layout bigger than 768px width*/
+@media screen and (min-width:768px) {
+
+  /*Brand/logo text*/
+  .brand-title {
+    font-size: 2.8rem;
+    padding: 1.5vh 3vw 2vh;
+  }
+
+  .navbar-links li {
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    padding-right: 6vw;
+  }
+
+  .hero-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url(img/bakery-g115c5e3d6_1920.jpg);
+    background-attachment: fixed;
+    margin-top: 0;
+    height: 75vh;
+  }
+
+  .hero-content {
+    width: 50%;
+    margin: 2rem;
+    padding: 2rem;
+  }
+
+  #hero-headline {
+    font-size: 1.5rem;
+  }
+
+  #hero-text {
+    font-size: 1.2rem;
+  }
+
+  .hero-btn {
+    font-size: 1.4rem;
+    padding: 12px 15px;
+  }
+
+  .cards-container {
+    padding-right: 10vw;
+    padding-left: 10vw;
+    gap: 0 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "card1 card2 card3"
+      "card1 card2 card3"
+      "card1 card2 card3";
+  }
+
+  .card-content a:link,
+  .card-content a:visited {
+    margin: 1rem 2rem;
+  }
+
+  .before-footer-image {
+    background-image: url(img/bread-g2dc26e28b_1920.jpg);
+    height: 30vh;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "footer1 footer2"
+      "footer1 footer2"
+      "footer-bottom footer-bottom";
+  }
+
+  #footer1, #footer2 {
+    margin: 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+/*Make the navbar responsive*/
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+
+  .navbar-links ul li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .navbar-links ul li a {
+    padding: 0.05rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    background-color: var(--one);
+  }
+
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+/* Turns off parallax scrolling */
+@media only screen and (max-width: 768px) {
+  .before-footer-image {
+    background-attachment: scroll;
+  }
+
+  .hero-img {
+    background-attachment: scroll;
+  }
+}
+
+/*All kod ovan är validerat*/
